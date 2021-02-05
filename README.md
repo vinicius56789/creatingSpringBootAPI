@@ -33,3 +33,5 @@ O projeto possui quatro entidades que se relacionam. A partir de um pacote é po
 ##### controller
 
 > Pacote de criação dos métodos GET, POST, PUT e DELETE da API. Esse pacote combina o uso de todos os outros para gerenciar a API e suas funcionalidades.
+
+### :wolf:
