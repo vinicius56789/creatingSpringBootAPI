@@ -1,4 +1,4 @@
-# API - Delivery :motorcycle: :motor_scooter: 
+# API - Delivery :motorcycle: :motor_scooter: :pizza:
 
 Projeto back end simplificado da parte de cadastro de usuários, produtos e de compras com produtos escolhidos.
 
