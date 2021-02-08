@@ -10,6 +10,13 @@ import com.everis.delivery.model.Shopping;
 import com.everis.delivery.repository.ClientRepository;
 import com.everis.delivery.repository.ShoppingRepository;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShoppingDto {
 
 	private Long shoppingId;
@@ -17,7 +24,6 @@ public class ShoppingDto {
 	private List<SelectedProducts> items;
 	private FormOfPayment payment;
 	private String cpf;
-	
 
 	public ShoppingDto(Shopping shopping) {
 		this.shoppingId = shopping.getId();
@@ -25,49 +31,6 @@ public class ShoppingDto {
 		this.clientId = shopping.getClient().getId();
 		this.items = shopping.getListOfPurchasedProducts();
 		this.cpf = shopping.getClient().getCpf();
-	}
-
-	public ShoppingDto() {
-	}
-	
-	public Long getShoppingId() {
-		return shoppingId;
-	}
-
-	public void setShoppingId(Long shoppingId) {
-		this.shoppingId = shoppingId;
-	}
-
-	public Long getClientId() {
-		return clientId;
-	}
-
-	public void setClientId(Long clientId) {
-		this.clientId = clientId;
-	}
-
-	public FormOfPayment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(FormOfPayment payment) {
-		this.payment = payment;
-	}
-
-	public List<SelectedProducts> getItems() {
-		return items;
-	}
-
-	public void setItems(List<SelectedProducts> items) {
-		this.items = items;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public static List<ShoppingDto> converter(List<Shopping> compras) {
@@ -81,7 +44,7 @@ public class ShoppingDto {
 
 	public Shopping atualizar(Long id, ShoppingRepository shoppingRepository) {
 		Shopping shopping = shoppingRepository.getOne(id);
-		shopping.setListOfPurchasedProducts(this.getItems());
+		shopping.setItems(this.getItems());
 		shopping.setPayment(this.getPayment());
 		return shopping;
 	}

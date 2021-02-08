@@ -12,8 +12,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "shopping")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Shopping {
 
 	@Id
@@ -32,41 +39,11 @@ public class Shopping {
 		this.payment = payment2;
 	}
 	
-	public Shopping() {}
-
 	public List<SelectedProducts> getListOfPurchasedProducts() {
 		if(items == null) {
 			items = new ArrayList<SelectedProducts>();
 		}
 		return items;
-	}
-
-	public void setListOfPurchasedProducts(List<SelectedProducts> listOfPurchasedProducts) {
-		items = listOfPurchasedProducts;
-	}
-
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-
-	public FormOfPayment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(FormOfPayment payment) {
-		this.payment = payment;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }

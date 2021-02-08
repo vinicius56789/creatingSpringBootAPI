@@ -8,6 +8,13 @@ import org.hibernate.validator.constraints.Length;
 import com.everis.delivery.model.Product;
 import com.everis.delivery.repository.ProductRepository;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductForm {
 
 	@NotNull
@@ -22,30 +29,6 @@ public class ProductForm {
 	@NotEmpty
 	@Length(min = 4)
 	private int quantidade;
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public Double getValor() {
-		return valor;
-	}
-
-	public void setValor(Double valor) {
-		this.valor = valor;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
 
 	public Product converter(ProductRepository productRepository) {
 		return new Product(nome, valor);

@@ -5,6 +5,13 @@ import java.util.stream.Collectors;
 
 import com.everis.delivery.model.Client;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ClientDto {
 
 	private Long id;
@@ -17,22 +24,6 @@ public class ClientDto {
 		this.nome = client.getNome();
 		this.telefone = client.getTelefone();
 		this.endereco = client.getEndereco();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public String getEndereco() {
-		return endereco;
 	}
 
 	public static List<ClientDto> converter(List<Client> clients) {

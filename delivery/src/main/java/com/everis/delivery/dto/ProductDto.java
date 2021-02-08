@@ -5,6 +5,13 @@ import java.util.stream.Collectors;
 
 import com.everis.delivery.model.Product;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductDto {
 
 	public String nome;
@@ -13,22 +20,6 @@ public class ProductDto {
 	public ProductDto(Product product) {
 		this.nome = product.getNome();
 		this.valor = product.getValor();
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public Double getValor() {
-		return valor;
-	}
-
-	public void setValor(Double valor) {
-		this.valor = valor;
 	}
 
 	public static List<ProductDto> converter(List<Product> products) {
