@@ -22,7 +22,7 @@ public class ShoppingDto {
 	//private Long clientId;
 	@Getter @Setter private List<SelectedProducts> items;
 	@Getter @Setter private FormOfPayment payment;
-	private String cpf;
+	@Setter private String cpf;
 	@Getter @Setter private String nome;
 
 	public ShoppingDto(Shopping shopping) {
