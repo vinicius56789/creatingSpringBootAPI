@@ -9,28 +9,29 @@ import com.everis.delivery.model.SelectedProducts;
 import com.everis.delivery.model.Shopping;
 import com.everis.delivery.repository.ClientRepository;
 import com.everis.delivery.repository.ShoppingRepository;
-
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShoppingDto {
 
-	private Long shoppingId;
-	private Long clientId;
-	private List<SelectedProducts> items;
-	private FormOfPayment payment;
+	@Getter @Setter private Long shoppingId;
+	//private Long clientId;
+	@Getter @Setter private List<SelectedProducts> items;
+	@Getter @Setter private FormOfPayment payment;
 	private String cpf;
+	@Getter @Setter private String nome;
 
 	public ShoppingDto(Shopping shopping) {
 		this.shoppingId = shopping.getId();
 		this.payment = shopping.getPayment();
-		this.clientId = shopping.getClient().getId();
+		//this.clientId = shopping.getClient().getId();
 		this.items = shopping.getListOfPurchasedProducts();
 		this.cpf = shopping.getClient().getCpf();
+		this.nome = shopping.getClient().getNome();
 	}
 
 	public static List<ShoppingDto> converter(List<Shopping> compras) {

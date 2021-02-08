@@ -25,9 +25,11 @@ public class ClientForm {
 	private String telefone;
 	@NotNull @NotEmpty @Length(min=4)
 	private String cpf;
+	@NotNull @NotEmpty @Length(min=4)
+	private String email;
 	
 	public Client converter(ClientRepository clientRepository) {
-		return new Client(nome, telefone, endereco, cpf);
+		return new Client(nome, telefone, endereco, email, cpf);
 	}
 	
 	public Client atualizar(Long id, ClientRepository clientRepository) {
@@ -36,6 +38,7 @@ public class ClientForm {
 		client.setTelefone(this.getTelefone());
 		client.setEndereco(this.getEndereco());
 		client.setCpf(this.getCpf());
+		client.setEmail(this.getEmail());
 		return client;
 	}
 

@@ -7,7 +7,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -74,15 +73,15 @@ public class ShoppingController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@DeleteMapping("/{id}")
-	@Transactional
-	public ResponseEntity<ShoppingDto> excluirCompraPeloId(@PathVariable Long id){
-		Optional<Shopping> shopping = shoppingRepository.findById(id);
-		if(shopping.isPresent()) {
-			shoppingRepository.deleteById(id);
-			return ResponseEntity.ok().build();
-		}
-		return ResponseEntity.notFound().build();
-	}
+//	@DeleteMapping("/{id}")
+//	@Transactional
+//	public ResponseEntity<ShoppingDto> excluirCompraPeloId(@PathVariable Long id){
+//		Optional<Shopping> shopping = shoppingRepository.findById(id);
+//		if(shopping.isPresent()) {
+//			shoppingRepository.deleteById(id);
+//			return ResponseEntity.ok().build();
+//		}
+//		return ResponseEntity.notFound().build();
+//	}
 
 }

@@ -9,11 +9,11 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class SelectedProducts {
@@ -23,10 +23,10 @@ public class SelectedProducts {
 	private Long id;
 	@ManyToOne
 	@JsonIgnore
-	private Shopping shopping;
+	@Getter @Setter private Shopping shopping;
 	@ManyToOne
-	private Product product;
-	private int quantidade;
+	@Getter @Setter private Product product;
+	@Getter @Setter private int quantidade;
 
 	public SelectedProducts(Long id2, Product product, int quantidade2) {
 		this.shopping.setId(id2);
