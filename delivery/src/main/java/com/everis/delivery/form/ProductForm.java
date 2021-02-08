@@ -22,13 +22,7 @@ public class ProductForm {
 	@Length(min = 4)
 	private String nome;
 	@NotNull
-	@NotEmpty
-	@Length(min = 4)
 	private Double valor;
-	@NotNull
-	@NotEmpty
-	@Length(min = 4)
-	private int quantidade;
 
 	public Product converter(ProductRepository productRepository) {
 		return new Product(nome, valor);

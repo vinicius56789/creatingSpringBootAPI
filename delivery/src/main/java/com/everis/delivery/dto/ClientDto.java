@@ -18,12 +18,14 @@ public class ClientDto {
 	private String nome;
 	private String telefone;
 	private String endereco;
+	//private String cpf;
 
 	public ClientDto(Client client) {
 		this.id = client.getId();
 		this.nome = client.getNome();
 		this.telefone = client.getTelefone();
 		this.endereco = client.getEndereco();
+		//this.cpf = client.getCpf();
 	}
 
 	public static List<ClientDto> converter(List<Client> clients) {

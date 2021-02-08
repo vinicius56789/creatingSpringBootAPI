@@ -32,10 +32,11 @@ public class Client {
 		this.cpf = cpf;
 	}
 	
-	public Client(String nome, String telefone, String endereco) {
+	public Client(String nome, String telefone, String endereco, String cpf) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.endereco = endereco;
+		this.cpf = cpf;
 	}
 
 }
